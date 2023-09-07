@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        int ans=0;
+        helper(0, n, ans);
+        return ans;
+    }
+
+private:
+    void helper(int i, int n, int &ans){
+        if(i==n){
+            ans++;
+            return;
+        }else if(i>n) return;
+
+        helper(i+1, n, ans);
+        helper(i+2, n, ans);
+    }
+};
